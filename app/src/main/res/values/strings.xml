@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Runebound 3 Coin</string>
+    <string name="changeLang">Language</string>
+    <string name="startButton">Start</string>
 </resources>
