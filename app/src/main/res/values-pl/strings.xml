@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Runebound 3 Coin</string>
     <string name="startButton">Rozpocznij</string>
+    <string name="changeLang">Język</string>
 </resources>
