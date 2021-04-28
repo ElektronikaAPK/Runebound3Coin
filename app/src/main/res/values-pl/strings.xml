@@ -3,4 +3,7 @@
     <string name="app_name">Runebound 3 Coin</string>
     <string name="startButton">Rozpocznij</string>
     <string name="changeLang">Język</string>
+    <string name="english">angielski</string>
+    <string name="polish">polski</string>
+    <string name="accept">zaakceptuj</string>
 </resources>
