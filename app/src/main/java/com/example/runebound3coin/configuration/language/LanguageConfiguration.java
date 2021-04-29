@@ -1,4 +1,4 @@
-package com.example.runebound3coin.language;
+package com.example.runebound3coin.configuration.language;
 
 import android.app.Activity;
 import android.content.Context;
