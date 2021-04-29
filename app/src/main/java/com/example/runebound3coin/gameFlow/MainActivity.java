@@ -10,7 +10,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.runebound3coin.R;
-import com.example.runebound3coin.gameFlow.heroSetup.HeroSetupActivity;
+import com.example.runebound3coin.gameFlow.heroSetup.players.HeroSetupActivity;
 import com.example.runebound3coin.configuration.language.LanguageConfiguration;
 
 import java.util.Locale;

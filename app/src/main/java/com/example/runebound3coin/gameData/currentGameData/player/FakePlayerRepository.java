@@ -1,17 +1,11 @@
-package com.example.runebound3coin.gameFlow.player;
+package com.example.runebound3coin.gameData.currentGameData.player;
 
-import com.example.runebound3coin.gameData.entity.Hero;
+import com.example.runebound3coin.gameData.staticData.entity.Hero;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
-
-import dagger.Module;
-import dagger.hilt.InstallIn;
-import dagger.hilt.components.SingletonComponent;
 
 public class FakePlayerRepository  {
 

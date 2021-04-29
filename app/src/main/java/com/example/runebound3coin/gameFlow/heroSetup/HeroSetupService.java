@@ -1,9 +1,9 @@
 package com.example.runebound3coin.gameFlow.heroSetup;
 
-import com.example.runebound3coin.gameData.entity.Hero;
-import com.example.runebound3coin.gameData.repository.FakeHeroDataRepository;
-import com.example.runebound3coin.gameFlow.player.FakePlayerRepository;
-import com.example.runebound3coin.gameFlow.player.Player;
+import com.example.runebound3coin.gameData.staticData.entity.Hero;
+import com.example.runebound3coin.gameData.staticData.repository.FakeHeroDataRepository;
+import com.example.runebound3coin.gameData.currentGameData.player.FakePlayerRepository;
+import com.example.runebound3coin.gameData.currentGameData.player.Player;
 
 import java.util.List;
 

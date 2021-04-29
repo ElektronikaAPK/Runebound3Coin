@@ -1,17 +1,13 @@
-package com.example.runebound3coin.gameFlow.heroSetup;
+package com.example.runebound3coin.gameFlow.heroSetup.players;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.runebound3coin.gameFlow.heroSetup.HeroSetupService;
+import com.example.runebound3coin.gameFlow.heroSetup.players.PlayerRecViewAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.View;
 
 import com.example.runebound3coin.R;
 
@@ -23,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class HeroSetupActivity extends AppCompatActivity {
 
     @Inject
-     HeroSetupService heroSetup;
+    HeroSetupService heroSetup;
 
 
     private PlayerRecViewAdapter playerRecViewAdapter;

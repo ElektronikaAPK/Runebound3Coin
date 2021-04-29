@@ -1,4 +1,4 @@
-package com.example.runebound3coin.gameData.entity;
+package com.example.runebound3coin.gameData.staticData.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

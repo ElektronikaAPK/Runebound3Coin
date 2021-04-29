@@ -1,6 +1,6 @@
-package com.example.runebound3coin.gameFlow.player;
+package com.example.runebound3coin.gameData.currentGameData.player;
 
-import com.example.runebound3coin.gameData.entity.Hero;
+import com.example.runebound3coin.gameData.staticData.entity.Hero;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

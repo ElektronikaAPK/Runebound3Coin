@@ -1,7 +1,6 @@
-package com.example.runebound3coin.gameFlow.heroSetup;
+package com.example.runebound3coin.gameFlow.heroSetup.players;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,21 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.runebound3coin.R;
-import com.example.runebound3coin.gameData.entity.Hero;
-import com.example.runebound3coin.gameFlow.player.Player;
+import com.example.runebound3coin.gameData.currentGameData.player.Player;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
-import javax.inject.Inject;
-
-import dagger.Component;
-import dagger.hilt.android.AndroidEntryPoint;
 
 public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdapter.HeroSelectionViewHolder> {
 
