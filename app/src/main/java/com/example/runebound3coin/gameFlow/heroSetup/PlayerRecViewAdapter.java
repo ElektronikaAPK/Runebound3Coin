@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.runebound3coin.R;
+import com.example.runebound3coin.gameData.entity.Hero;
 import com.example.runebound3coin.gameFlow.player.Player;
 
 import java.io.File;
@@ -25,6 +26,9 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
+import dagger.Component;
+import dagger.hilt.android.AndroidEntryPoint;
+
 public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdapter.HeroSelectionViewHolder> {
 
     private Context context;
@@ -33,9 +37,6 @@ public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdap
     public PlayerRecViewAdapter(Context context) {
         this.context = context;
     }
-
-    @Inject
-    HeroSetupService heroSetupService;
 
     @NonNull
     @Override
@@ -46,7 +47,11 @@ public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull HeroSelectionViewHolder holder, int position) {
-        holder.heroName.setText("to do");
+        String displayName;
+        Player player = players.get(position);
+        if (player.isActive()) displayName = player.getHero().getName();
+        else displayName = context.getString(R.string.pickHero);
+        holder.heroName.setText(displayName);
         //to do when DB implemented
 //        Glide.with(context)
 //                .asBitmap()
