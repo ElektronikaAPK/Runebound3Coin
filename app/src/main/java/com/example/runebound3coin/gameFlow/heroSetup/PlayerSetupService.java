@@ -10,13 +10,13 @@ import java.util.List;
 import javax.inject.Inject;
 
 
-public class HeroSetupService {
+public class PlayerSetupService {
 
-    FakePlayerRepository playerRepository;
-    FakeHeroDataRepository heroRepository;
+    private final FakePlayerRepository playerRepository;
+    private final FakeHeroDataRepository heroRepository;
 
     @Inject
-    public HeroSetupService(FakeHeroDataRepository heroRepository, FakePlayerRepository playerRepository) {
+    public PlayerSetupService(FakeHeroDataRepository heroRepository, FakePlayerRepository playerRepository) {
         this.heroRepository = heroRepository;
         this.playerRepository = playerRepository;
     }

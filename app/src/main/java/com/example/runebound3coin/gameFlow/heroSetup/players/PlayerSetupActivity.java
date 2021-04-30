@@ -2,8 +2,7 @@ package com.example.runebound3coin.gameFlow.heroSetup.players;
 
 import android.os.Bundle;
 
-import com.example.runebound3coin.gameFlow.heroSetup.HeroSetupService;
-import com.example.runebound3coin.gameFlow.heroSetup.players.PlayerRecViewAdapter;
+import com.example.runebound3coin.gameFlow.heroSetup.PlayerSetupService;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,14 +15,17 @@ import javax.inject.Inject;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class HeroSetupActivity extends AppCompatActivity {
+public class PlayerSetupActivity extends AppCompatActivity {
 
     @Inject
-    HeroSetupService heroSetup;
+    PlayerSetupService heroSetup;
+
 
 
     private PlayerRecViewAdapter playerRecViewAdapter;
     private RecyclerView playerRecView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
