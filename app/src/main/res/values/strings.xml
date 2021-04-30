@@ -5,4 +5,9 @@
     <string name="english">english</string>
     <string name="polish">polish</string>
     <string name="accept">accept</string>
+    <string name="title_activity_hero_setup">HeroSetupActivity</string>
+
+    <string name="heroname">heroName</string>
+    <string name="pickHero">pick a hero</string>
+    <string name="playername">Player name</string>
 </resources>

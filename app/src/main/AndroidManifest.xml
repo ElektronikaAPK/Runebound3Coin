@@ -3,13 +3,19 @@
     package="com.example.runebound3coin">
 
     <application
+        android:name=".Runebound3Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Runebound3Coin">
-        <activity android:name=".MainActivity">
+        <activity android:name=".gameFlow.heroSetup.heroSelection.HeroSelectionActivity"></activity>
+        <activity
+            android:name=".gameFlow.heroSetup.players.HeroSetupActivity"
+            android:label="@string/title_activity_hero_setup"
+            android:theme="@style/Theme.Runebound3Coin.NoActionBar" />
+        <activity android:name=".gameFlow.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

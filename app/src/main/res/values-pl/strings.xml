@@ -6,4 +6,6 @@
     <string name="english">angielski</string>
     <string name="polish">polski</string>
     <string name="accept">zaakceptuj</string>
+    <string name="pickHero">Wybierz bohatera!</string>
+    <string name="playername">Imię gracza</string>
 </resources>
