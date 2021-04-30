@@ -10,10 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Runebound3Coin">
+        <activity android:name=".gameFlow.heroSetup.heroSelection.HeroSelectionActivity"></activity>
         <activity
             android:name=".gameFlow.heroSetup.players.HeroSetupActivity"
             android:label="@string/title_activity_hero_setup"
-            android:theme="@style/Theme.Runebound3Coin.NoActionBar"></activity>
+            android:theme="@style/Theme.Runebound3Coin.NoActionBar" />
         <activity android:name=".gameFlow.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -18,7 +18,7 @@ import com.example.runebound3coin.gameData.currentGameData.player.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdapter.HeroSelectionViewHolder> {
+public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdapter.ActivePlayersViewHolder> {
 
     private Context context;
     private List<Player> players = new ArrayList<>();
@@ -29,13 +29,13 @@ public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdap
 
     @NonNull
     @Override
-    public HeroSelectionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hero_selection_template, parent, false);
-        return new HeroSelectionViewHolder(view);
+    public ActivePlayersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.player_list_template, parent, false);
+        return new ActivePlayersViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HeroSelectionViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ActivePlayersViewHolder holder, int position) {
         String displayName;
         Player player = players.get(position);
         if (player.isActive()) displayName = player.getHero().getName();
@@ -59,14 +59,14 @@ public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdap
         return 4;
     }
 
-    public class HeroSelectionViewHolder extends RecyclerView.ViewHolder {
+    public class ActivePlayersViewHolder extends RecyclerView.ViewHolder {
 
         private CardView parent;
         private ImageView heroImage;
         private TextView heroName;
         private EditText playerName;
 
-        public HeroSelectionViewHolder(@NonNull View itemView) {
+        public ActivePlayersViewHolder(@NonNull View itemView) {
             super(itemView);
             parent = itemView.findViewById(R.id.parent);
             heroImage = itemView.findViewById(R.id.heroImg);
