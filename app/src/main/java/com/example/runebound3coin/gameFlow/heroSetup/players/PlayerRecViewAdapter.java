@@ -41,7 +41,7 @@ public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdap
         if (player.isActive()) displayName = player.getHero().getName();
         else displayName = context.getString(R.string.pickHero);
         holder.heroName.setText(displayName);
-        //to do when DB implemented
+        //TODO: implement image retrieval from database
 //        Glide.with(context)
 //                .asBitmap()
 //                .load()

@@ -28,4 +28,10 @@ public class PlayerSetupService {
     public List<Player> getAllPlayers(){
         return playerRepository.findAll();
     }
+
+    public List<Hero> getAllAvailableHeroes() {
+        //TODO: filter by expansions
+        //TODO: filter out heroes already picked
+        return heroRepository.findAll();
+    }
 }
