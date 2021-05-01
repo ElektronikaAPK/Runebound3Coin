@@ -9,7 +9,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class Player {
 
+    private int id;
     private String name;
     private Hero hero;
     private boolean active;
+
 }

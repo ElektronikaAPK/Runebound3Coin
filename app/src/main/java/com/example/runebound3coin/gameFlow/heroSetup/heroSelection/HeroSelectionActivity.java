@@ -1,44 +1,44 @@
 package com.example.runebound3coin.gameFlow.heroSetup.heroSelection;
 
-import androidx.annotation.NonNull;
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import com.example.runebound3coin.R;
-import com.example.runebound3coin.gameData.staticData.entity.Hero;
+import com.example.runebound3coin.gameFlow.heroSetup.PlayerSetupService;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class HeroSelectionActivity extends AppCompatActivity {
 
-    List<Hero> possibleHeroes = new ArrayList<>();
+    @Inject
+    PlayerSetupService playerSetupService;
+
+    private HeroSelectionRecViewAdapter heroSelectionAdapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hero_selection);
+
+        heroSelectionAdapter = new HeroSelectionRecViewAdapter(this);
+        recyclerView = findViewById(R.id.hero_selection_recycler_view);
+
+        recyclerView.setAdapter(heroSelectionAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        heroSelectionAdapter.setAvailableHeroes(playerSetupService.getAllAvailableHeroes());
+        Intent intent = getIntent();
+        int playerBeingSet = intent.getIntExtra("playerId", -1);
+        heroSelectionAdapter.setPlayerId(playerBeingSet);
     }
 
 
-    public class HeroSelectionViewHolder extends RecyclerView.ViewHolder {
-
-        private CardView parent;
-        private ImageView heroImage;
-        private TextView heroName;
-
-        public HeroSelectionViewHolder(@NonNull View itemView) {
-            super(itemView);
-            parent = itemView.findViewById(R.id.parent);
-            heroImage = itemView.findViewById(R.id.heroImg);
-            heroName = itemView.findViewById(R.id.heroName);
-        }
-    }
 }
