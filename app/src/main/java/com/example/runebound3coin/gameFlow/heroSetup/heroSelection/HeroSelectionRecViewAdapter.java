@@ -13,17 +13,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.runebound3coin.R;
-import com.example.runebound3coin.gameData.currentGameData.player.Player;
 import com.example.runebound3coin.gameData.staticData.entity.Hero;
-import com.example.runebound3coin.gameFlow.heroSetup.PlayerSetupService;
 import com.example.runebound3coin.gameFlow.heroSetup.players.PlayerSetupActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.inject.Inject;
-
-import dagger.hilt.android.AndroidEntryPoint;
 
 public class HeroSelectionRecViewAdapter extends RecyclerView.Adapter<HeroSelectionRecViewAdapter.HeroSelectionViewHolder> {
 
@@ -31,18 +25,18 @@ public class HeroSelectionRecViewAdapter extends RecyclerView.Adapter<HeroSelect
 
     private  List<Hero> availableHeroes = new ArrayList<>();
     private Context context;
-    private int playerBeingSet;
+    private int playerId;
 
     public HeroSelectionRecViewAdapter(Context context) {
         this.context = context;
     }
 
-    public int getPlayerBeingSet() {
-        return playerBeingSet;
+    public int getPlayerId() {
+        return playerId;
     }
 
-    public void setPlayerBeingSet(int playerBeingSet) {
-        this.playerBeingSet = playerBeingSet;
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
     }
 
     public void setAvailableHeroes(List<Hero> availableHeroes) {
@@ -67,7 +61,7 @@ public class HeroSelectionRecViewAdapter extends RecyclerView.Adapter<HeroSelect
             Intent intent = new Intent(context, PlayerSetupActivity.class);
             intent.putExtra("isPlayerPicked", true);
             intent.putExtra("heroId", hero.getId());
-            intent.putExtra("playerId", playerBeingSet);
+            intent.putExtra("playerId", playerId);
             context.startActivity(intent);
 
 

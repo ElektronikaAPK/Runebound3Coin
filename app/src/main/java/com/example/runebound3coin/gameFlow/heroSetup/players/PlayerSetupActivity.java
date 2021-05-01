@@ -28,13 +28,19 @@ public class PlayerSetupActivity extends AppCompatActivity {
     private Intent intent;
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        addHeroSelection();
+        playerRecViewAdapter.setPlayers(playerSetup.getAllPlayers());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hero_setup);
 
-        addHeroSelection();
 
         playerRecViewAdapter = new PlayerRecViewAdapter(this);
         playerRecView = findViewById(R.id.playerRecView);
@@ -42,7 +48,7 @@ public class PlayerSetupActivity extends AppCompatActivity {
         playerRecView.setAdapter(playerRecViewAdapter);
         playerRecView.setLayoutManager(new LinearLayoutManager(this));
 
-        playerRecViewAdapter.setPlayers(playerSetup.getAllPlayers());
+
 
     }
 

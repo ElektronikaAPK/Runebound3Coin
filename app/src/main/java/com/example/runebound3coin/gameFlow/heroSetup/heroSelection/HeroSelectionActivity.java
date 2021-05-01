@@ -2,7 +2,6 @@ package com.example.runebound3coin.gameFlow.heroSetup.heroSelection;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,8 +36,8 @@ public class HeroSelectionActivity extends AppCompatActivity {
 
         heroSelectionAdapter.setAvailableHeroes(playerSetupService.getAllAvailableHeroes());
         Intent intent = getIntent();
-        int playerBeingSet = intent.getIntExtra("playerPosition", 1);
-        heroSelectionAdapter.setPlayerBeingSet(playerBeingSet);
+        int playerBeingSet = intent.getIntExtra("playerId", -1);
+        heroSelectionAdapter.setPlayerId(playerBeingSet);
     }
 
 

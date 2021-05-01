@@ -45,7 +45,7 @@ public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdap
         holder.heroName.setText(displayName);
         holder.parent.setOnClickListener(x -> {
             Intent intent = new Intent(context, HeroSelectionActivity.class);
-            intent.putExtra("playerPosition", position);
+            intent.putExtra("playerId", player.getId());
             context.startActivity(intent);
 
 
