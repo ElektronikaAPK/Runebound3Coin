@@ -1,6 +1,7 @@
 package com.example.runebound3coin.gameFlow.heroSetup.players;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.runebound3coin.R;
 import com.example.runebound3coin.gameData.currentGameData.player.Player;
+import com.example.runebound3coin.gameFlow.heroSetup.heroSelection.HeroSelectionActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,13 @@ public class PlayerRecViewAdapter extends RecyclerView.Adapter<PlayerRecViewAdap
         if (player.isActive()) displayName = player.getHero().getName();
         else displayName = context.getString(R.string.pickHero);
         holder.heroName.setText(displayName);
+        holder.parent.setOnClickListener(x -> {
+            Intent intent = new Intent(context, HeroSelectionActivity.class);
+            intent.putExtra("playerPosition", position);
+            context.startActivity(intent);
+
+
+        });
         //TODO: implement image retrieval from database
 //        Glide.with(context)
 //                .asBitmap()

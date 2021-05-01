@@ -1,5 +1,6 @@
 package com.example.runebound3coin.gameFlow.heroSetup.players;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.runebound3coin.gameFlow.heroSetup.PlayerSetupService;
@@ -18,12 +19,13 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class PlayerSetupActivity extends AppCompatActivity {
 
     @Inject
-    PlayerSetupService heroSetup;
+    PlayerSetupService playerSetup;
 
 
 
     private PlayerRecViewAdapter playerRecViewAdapter;
     private RecyclerView playerRecView;
+    private Intent intent;
 
 
 
@@ -32,13 +34,24 @@ public class PlayerSetupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hero_setup);
 
+        addHeroSelection();
+
         playerRecViewAdapter = new PlayerRecViewAdapter(this);
         playerRecView = findViewById(R.id.playerRecView);
 
         playerRecView.setAdapter(playerRecViewAdapter);
         playerRecView.setLayoutManager(new LinearLayoutManager(this));
 
-        playerRecViewAdapter.setPlayers(heroSetup.getAllPlayers());
+        playerRecViewAdapter.setPlayers(playerSetup.getAllPlayers());
 
+    }
+
+    private void addHeroSelection() {
+        intent = getIntent();
+        if (!intent.hasExtra("isPlayerPicked")) return;
+
+        int heroId = intent.getIntExtra("heroId", -1);
+        int playerId = intent.getIntExtra("playerId", -1);
+        playerSetup.setHeroForPlayer(heroId, playerId);
     }
 }

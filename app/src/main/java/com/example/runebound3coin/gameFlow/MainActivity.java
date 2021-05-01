@@ -10,12 +10,21 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.runebound3coin.R;
+import com.example.runebound3coin.gameFlow.heroSetup.PlayerSetupService;
 import com.example.runebound3coin.gameFlow.heroSetup.players.PlayerSetupActivity;
 import com.example.runebound3coin.configuration.language.LanguageConfiguration;
 
 import java.util.Locale;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    PlayerSetupService playerSetupService;
 
     RadioGroup languageSelector;
     RadioButton choseEnglish, chosePolish;
@@ -51,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startGame(View view) {
+        playerSetupService.initialize();
         Intent intent = new Intent(view.getContext(), PlayerSetupActivity.class);
         startActivity(intent);
     }

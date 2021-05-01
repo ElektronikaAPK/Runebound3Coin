@@ -1,26 +1,21 @@
 package com.example.runebound3coin.gameFlow.heroSetup.heroSelection;
 
-import androidx.annotation.NonNull;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import com.example.runebound3coin.R;
-import com.example.runebound3coin.gameData.staticData.entity.Hero;
 import com.example.runebound3coin.gameFlow.heroSetup.PlayerSetupService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class HeroSelectionActivity extends AppCompatActivity {
 
     @Inject
@@ -41,6 +36,10 @@ public class HeroSelectionActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         heroSelectionAdapter.setAvailableHeroes(playerSetupService.getAllAvailableHeroes());
+        Intent intent = getIntent();
+        int playerBeingSet = intent.getIntExtra("playerPosition", 1);
+        heroSelectionAdapter.setPlayerBeingSet(playerBeingSet);
     }
+
 
 }

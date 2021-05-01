@@ -7,6 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class Hero {
 
+    int id;
     String name;
     String fakeSkill;
 }

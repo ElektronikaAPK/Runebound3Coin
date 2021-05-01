@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/hero_template_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/heroImg"
-        android:layout_width="141dp"
-        android:layout_height="145dp"
-        android:layout_margin="20dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        <ImageView
+            android:id="@+id/heroImg"
+            android:layout_width="141dp"
+            android:layout_height="145dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@android:drawable/ic_menu_compass" />
 
         <TextView
             android:id="@+id/heroName"
